@@ -4,15 +4,74 @@ body {
     color: #FBC841;
     text-align: center;
     background: url('../images/rivendell-7713475.jpg') repeat-y left right;
+    
 }
 
 .main-heading {
     font-family: "Cinzel Decorative", sans-serif;
+    text-align: center;
+    font-size: 2.5rem;
 }
 
 .container {
     background-image: url('../images/rivendell-7713475.jpg'), url('../images/rivendell-7713475.jpg');
     background-repeat: no-repeat;
     background-position: left top, right top;
-    background-size: auto 100%;
+    background-size: 15% 100%;
+    
 }
+
+.game-area {
+    background-color: #0f4e06;
+    box-sizing: border-box;
+    width: 100%;
+    height: 65vh;
+    max-height: 450px;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+
+.question-area {
+  
+    width: 80%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    
+    
+    
+}
+
+.buttton {
+    width: 220px;
+    height: 60px;
+    letter-spacing: 1.2px;
+    color: white;
+}
+
+.large-button {
+    padding-top: 10px;
+    background-color: white;
+    border: 10px solid;
+    width: 80%;
+    height: 80px;
+    font-size: 3.2rem;
+    margin: 1% auto;
+    padding: 5px;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    
+}
+
+.large-button:hover {
+    border-color: #FBC841; 
+  }
+
