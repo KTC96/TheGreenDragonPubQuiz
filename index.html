@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/CSS/style.css">
     <script src="https://kit.fontawesome.com/64b9a22ea9.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Cinzel+Decorative:wght@900&display=swap"
+        rel="stylesheet">
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <title>The Green Dragon Pub Quiz</title>
 </head>
-<body>
-    <h1 class="main-heading">
-        <img src="#" alt="logo"> The Green Dragon Pub Quiz
-     </h1>
-    
 
-<script src="assets/JS/script.js"></script>
+<body>
+    <div class="container">
+        <h1 class="main-heading">
+            <i class="fa-solid fa-dragon"></i> The Green Dragon Pub Quiz
+        </h1>
+
+        <div class="game-area">
+            <div class="question-area"></div>
+            <div class="answer-area">
+                <button class="button large-button selection-1"></button>
+                <button class="button large-button selection-2"></button>
+                <button class="button large-button selection-3"></button>
+                <button class="button large-button selection-4"></button>
+
+
+
+
+            </div>
+
+            <div class="score-area">
+                <p class="scores">Correct Answers <span id="score">0</span></p>
+                <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
+
+            </div>
+
+            <div class="high-score area">
+                <p class="high-scores">High Score <span id="high-score">0</span></p>
+
+
+            </div>
+
+
+        </div>
+
+
+        <script src="assets/JS/script.js"></script>
+    </div>
 </body>
+
 </html>

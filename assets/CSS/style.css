@@ -1,0 +1,18 @@
+body {
+    background-color: black;
+    font-family: "cardo", sans-serif;
+    color: #FBC841;
+    text-align: center;
+    background: url('../images/rivendell-7713475.jpg') repeat-y left right;
+}
+
+.main-heading {
+    font-family: "Cinzel Decorative", sans-serif;
+}
+
+.container {
+    background-image: url('../images/rivendell-7713475.jpg'), url('../images/rivendell-7713475.jpg');
+    background-repeat: no-repeat;
+    background-position: left top, right top;
+    background-size: auto 100%;
+}
