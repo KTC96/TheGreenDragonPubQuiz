@@ -4,7 +4,7 @@ body {
     color: #FBC841;
     text-align: center;
     background: url('../images/rivendell-7713475.jpg') repeat-y left right;
-    
+
 }
 
 .main-heading {
@@ -18,7 +18,7 @@ body {
     background-repeat: no-repeat;
     background-position: left top, right top;
     background-size: 15% 100%;
-    
+
 }
 
 .game-area {
@@ -30,22 +30,22 @@ body {
     max-width: 70%;
     margin-left: auto;
     margin-right: auto;
-   
+
 }
 
-.question-area {
-  
+#question-area {
+
     width: 80%;
     height: 50px;
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
     display: flex;
-   justify-content: center;
-   align-items: center;
-    
-    
-    
+    justify-content: center;
+    align-items: center;
+
+
+
 }
 
 .buttton {
@@ -55,23 +55,55 @@ body {
     color: white;
 }
 
-.large-button {
+.answer-button {
     padding-top: 10px;
     background-color: white;
     border: 10px solid;
     width: 80%;
     height: 80px;
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     margin: 1% auto;
     padding: 5px;
     transition: all 0.5s;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    
+    justify-content: center;
+
 }
 
-.large-button:hover {
-    border-color: #FBC841; 
-  }
+.answer-button:hover {
+    border-color: #FBC841;
+}
 
+.score-area {
+    margin: 5px auto;
+    width: 60%;
+    font-size: 1.2rem;
+}
+
+#score {
+    color: green;
+    font-weight: bold;
+}
+
+#incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+#high-score {
+    color:#FBC841;
+    font-weight: bold;
+}
+
+.scores {
+    display: inline-block;
+    padding: 25px;
+}
+
+.high-scores {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
