@@ -1,12 +1,8 @@
+// Array containing questions, answers and correct answers
 const quizData = [{
         question: 'Who is the steward of Gondor before Aragorn returns to claim the throne?',
         answers: ['Denethor', 'Theoden', 'Boromir', 'Sauron'],
         correctAnswer: 0
-    },
-    {
-        question: "What is the name of the horse given to Aragorn by Rohan's king?",
-        answers: ['Shadowfax', 'Brego', 'Asfaloth', 'Hasufel'],
-        correctAnswer: 1
     },
     {
         question: 'Who is the steward of the Ring who succumbs to its power and attempts to take it for himself?',
@@ -19,19 +15,9 @@ const quizData = [{
         correctAnswer: 3
     },
     {
-        question: 'Who is the steward of Gondor before Aragorn returns to claim the throne?',
-        answers: ['Boromir', 'Theoden', 'Denethor', 'Sauron'],
-        correctAnswer: 2
-    },
-    {
         question: "What is the name of the horse given to Aragorn by Rohan's king?",
         answers: ['Shadowfax', 'Brego', 'Hasufel', 'Asfaloth'],
         correctAnswer: 1
-    },
-    {
-        question: 'Who is the steward of the Ring who succumbs to its power and attempts to take it for himself?',
-        answers: ['Faramir', 'Frodo', 'Gimli', 'Boromir'],
-        correctAnswer: 3
     },
     {
         question: 'Who is the founder and of Rohan?',
@@ -107,7 +93,7 @@ const quizData = [{
     },
     {
         question: 'What is the name of the fortress that serves as the dwelling place of Sauron in Mordor?',
-        answers: ['Minas Morgul', 'Mordor', 'Isengard', 'Barad-dur'],
+        answers: ['Minas Morgul', 'Mordor', 'Isengard', 'Barad-dûr'],
         correctAnswer: 3
     },
     {
@@ -117,17 +103,22 @@ const quizData = [{
 
     }
 ];
-
+// Selection of DOM elements
 const questionArea = document.getElementById('question');
 const answerButtons = document.querySelectorAll('.answer-button');
 const incorrectCountArea = document.getElementById('incorrect-count');
 const scoreElement = document.getElementById('score');
 const highScoreElement = document.getElementById('high-score');
 
+// Set initial variables to 0
 let currentQuestion = 0;
 let score = 0;
 let incorrect = 0;
 let highScore = 0;
+
+/**
+ * Initialises the quiz by calling the showQuestion function and adds event listeners to each button
+ */
 
 function initializeQuiz() {
     showQuestion();
@@ -135,7 +126,9 @@ function initializeQuiz() {
         button.addEventListener('click', (event) => handleAnswer(event));
     });
 }
-
+/** Displays a question and potential answers
+ * 
+ */
 function showQuestion() {
     const question = quizData[currentQuestion];
     questionArea.textContent = question.question;
@@ -144,7 +137,10 @@ function showQuestion() {
         answerButtons[i].textContent = question.answers[i];
     }
 }
-
+/**Checks if the selected answer button is the correct answer
+ * Increments the score if correct and the incorrect score if incorrect. Moves to the next question after clicking
+ * 
+  */
 function handleAnswer(event) {
     const selectedButton = event.target;
     const question = quizData[currentQuestion];
@@ -166,15 +162,16 @@ function handleAnswer(event) {
         showFinalScore();
     }
 }
-
+// Updates the score on the page
 function updateScore() {
     scoreElement.textContent = score;
 }
-
+// Updates incorrect score on the page
 function updateIncorrectCount() {
     incorrectCountArea.textContent = incorrect;
 }
 
+// Updates highscore if the current score is higher than the previous highscore
 function showFinalScore() {
     if (score > highScore) {
         highScore = score;
