@@ -48,15 +48,10 @@ body {
 
 }
 
-.buttton {
-    width: 220px;
-    height: 60px;
-    letter-spacing: 1.2px;
-    color: white;
-}
+
 
 .answer-button {
-    padding-top: 10px;
+   
     background-color: white;
     border: 10px solid;
     width: 80%;
@@ -68,6 +63,9 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-family: "cardo", sans-serif;
+    font-weight: 600;
+    
 
 }
 
@@ -106,4 +104,33 @@ body {
     align-items: center;
     justify-content: center;
     margin: auto;
+}
+
+#fullReset {
+
+    background-color: white;
+    border: 5px solid;
+    width: 30%;
+    height: 20%;
+    font-size: 2.5rem;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    margin-left: -15%;
+    top: 50%;
+    margin-top: -5%;
+    background-image: url('../images/middle-earth-4760561_1280.jpg');
+    background-size: cover;
+
+    
+}
+
+    
+  
+
+
+#fullReset:hover {
+    border-color: #FBC841;
+    
 }

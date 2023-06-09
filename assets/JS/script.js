@@ -109,6 +109,11 @@ const answerButtons = document.querySelectorAll('.answer-button');
 const incorrectCountArea = document.getElementById('incorrect-count');
 const scoreElement = document.getElementById('score');
 const highScoreElement = document.getElementById('high-score');
+var fullReset = document.getElementById('fullReset');
+let buttonContainer = document.getElementById('button-container');
+
+
+
 
 // Set initial variables to 0
 let currentQuestion = 0;
@@ -125,6 +130,9 @@ function initializeQuiz() {
     answerButtons.forEach((button) => {
         button.addEventListener('click', (event) => handleAnswer(event));
     });
+// Hides the restart quiz button
+
+  //  fullReset.style.visibility = 'hidden';
 }
 /** Displays a question and potential answers
  * 
@@ -140,7 +148,7 @@ function showQuestion() {
 /**Checks if the selected answer button is the correct answer
  * Increments the score if correct and the incorrect score if incorrect. Moves to the next question after clicking
  * 
-  */
+ */
 function handleAnswer(event) {
     const selectedButton = event.target;
     const question = quizData[currentQuestion];
@@ -179,6 +187,17 @@ function showFinalScore() {
     }
 
     questionArea.textContent = `Quiz Finished!\nYour Score: ${score}/${quizData.length}`;
+
+// Shows the restart quiz button and adds event listener so that quiz can be reloaded 
+    fullReset.style.visibility = 'visible';
+    buttonContainer.style.visibility = 'hidden';
+
+    fullReset.addEventListener('click', function (e) {
+        location.reload();
+    }, false);
+
 }
+
+
 
 initializeQuiz();
