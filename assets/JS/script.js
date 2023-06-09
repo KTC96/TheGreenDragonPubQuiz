@@ -109,34 +109,32 @@ const answerButtons = document.querySelectorAll('.answer-button');
 const incorrectCountArea = document.getElementById('incorrect-count');
 const scoreElement = document.getElementById('score');
 const highScoreElement = document.getElementById('high-score');
-var fullReset = document.getElementById('fullReset');
-let buttonContainer = document.getElementById('button-container');
-
-
-
+const fullReset = document.getElementById('fullReset');
+const buttonContainer = document.getElementById('button-container');
 
 // Set initial variables to 0
 let currentQuestion = 0;
 let score = 0;
 let incorrect = 0;
-let highScore = 0;
+let highScore = parseInt(localStorage.getItem('highScore')) || 0;
 let questionAnswered = false;
 
 /**
- * Initialises the quiz by calling the showQuestion function and adds event listeners to each button
+ * Initializes the quiz by calling the showQuestion function and adding event listeners to each button
  */
-
 function initializeQuiz() {
     showQuestion();
+
     answerButtons.forEach((button) => {
         button.addEventListener('click', (event) => handleAnswer(event));
     });
-    // Hides the restart quiz button
 
+    // Hides the restart quiz button
     fullReset.style.visibility = 'hidden';
 }
-/** Displays a question and potential answers
- * 
+
+/**
+ * Displays a question and potential answers
  */
 function showQuestion() {
     const question = quizData[currentQuestion];
@@ -146,16 +144,18 @@ function showQuestion() {
         answerButtons[i].textContent = question.answers[i];
     }
 }
-/**Checks if the selected answer button is the correct answer
- * Increments the score if correct and the incorrect score if incorrect. Moves to the next question after clicking
- * 
+
+/**
+ * Checks if the selected answer button is the correct answer
+ * Increments the score if correct and the incorrect score if incorrect. Highlights correct answer border and text in green
+ * and incorrect in red. After a 3 second delay the next question and answers are shown. 
  */
 function handleAnswer(event) {
     if (questionAnswered) {
-        return; 
+        return;
     }
 
-    questionAnswered = true; 
+    questionAnswered = true;
     const selectedButton = event.target;
     const question = quizData[currentQuestion];
     const selectedAnswer = Array.from(answerButtons).indexOf(selectedButton);
@@ -165,7 +165,6 @@ function handleAnswer(event) {
         selectedButton.style.color = 'green';
         score++;
         updateScore();
-
     } else {
         selectedButton.style.borderColor = 'red';
         selectedButton.style.color = 'red';
@@ -176,12 +175,9 @@ function handleAnswer(event) {
     }
 
     setTimeout(() => {
-
         answerButtons.forEach((button) => {
             button.style.borderColor = '';
-            selectedButton.style.color = '';
-            answerButtons[question.correctAnswer].style.borderColor = '';
-            answerButtons[question.correctAnswer].style.color = '';
+            button.style.color = '';
             button.disabled = false;
         });
 
@@ -193,36 +189,51 @@ function handleAnswer(event) {
         } else {
             showFinalScore();
         }
-    }, 5000);
+    }, 300);
 }
-// Updates the score on the page
+
+/**
+ * Updates the score on the page
+ */
 function updateScore() {
     scoreElement.textContent = score;
 }
-// Updates incorrect score on the page
+
+/**
+ * Updates incorrect score on the page
+ */
 function updateIncorrectCount() {
     incorrectCountArea.textContent = incorrect;
 }
 
-// Updates highscore if the current score is higher than the previous highscore
+/**
+ * Shows the final score at the end of the quiz
+ * Updates high score if the current score is higher than the previous high score.
+ * Provides message that the quiz is over and shows restart quiz button.
+ */
 function showFinalScore() {
     if (score > highScore) {
         highScore = score;
-        highScoreElement.textContent = highScore;
+        localStorage.setItem('highScore', highScore);
     }
 
     questionArea.textContent = `Quiz Finished!\nYour Score: ${score}/${quizData.length}`;
+    scoreElement.textContent = score;
+    highScoreElement.textContent = highScore.toString();
 
-    // Shows the restart quiz button and adds event listener so that quiz can be reloaded 
     fullReset.style.visibility = 'visible';
     buttonContainer.style.visibility = 'hidden';
 
     fullReset.addEventListener('click', function (e) {
         location.reload();
     }, false);
-
 }
 
+// Display highscore from local storage 
 
+highScoreElement.textContent = highScore.toString();
+
+// Call the initialization function
 
 initializeQuiz();
+
