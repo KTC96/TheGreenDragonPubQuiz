@@ -120,6 +120,7 @@ let currentQuestion = 0;
 let score = 0;
 let incorrect = 0;
 let highScore = 0;
+let questionAnswered = false;
 
 /**
  * Initialises the quiz by calling the showQuestion function and adds event listeners to each button
@@ -130,9 +131,9 @@ function initializeQuiz() {
     answerButtons.forEach((button) => {
         button.addEventListener('click', (event) => handleAnswer(event));
     });
-// Hides the restart quiz button
+    // Hides the restart quiz button
 
-  fullReset.style.visibility = 'hidden';
+    fullReset.style.visibility = 'hidden';
 }
 /** Displays a question and potential answers
  * 
@@ -150,25 +151,49 @@ function showQuestion() {
  * 
  */
 function handleAnswer(event) {
+    if (questionAnswered) {
+        return; 
+    }
+
+    questionAnswered = true; 
     const selectedButton = event.target;
     const question = quizData[currentQuestion];
     const selectedAnswer = Array.from(answerButtons).indexOf(selectedButton);
 
     if (selectedAnswer === question.correctAnswer) {
+        selectedButton.style.borderColor = 'green';
+        selectedButton.style.color = 'green';
         score++;
         updateScore();
+
     } else {
+        selectedButton.style.borderColor = 'red';
+        selectedButton.style.color = 'red';
         incorrect++;
         updateIncorrectCount();
+        answerButtons[question.correctAnswer].style.borderColor = 'green';
+        answerButtons[question.correctAnswer].style.color = 'green';
     }
 
-    currentQuestion++;
+    setTimeout(() => {
 
-    if (currentQuestion < quizData.length) {
-        showQuestion();
-    } else {
-        showFinalScore();
-    }
+        answerButtons.forEach((button) => {
+            button.style.borderColor = '';
+            selectedButton.style.color = '';
+            answerButtons[question.correctAnswer].style.borderColor = '';
+            answerButtons[question.correctAnswer].style.color = '';
+            button.disabled = false;
+        });
+
+        currentQuestion++;
+        questionAnswered = false;
+
+        if (currentQuestion < quizData.length) {
+            showQuestion();
+        } else {
+            showFinalScore();
+        }
+    }, 5000);
 }
 // Updates the score on the page
 function updateScore() {
@@ -188,7 +213,7 @@ function showFinalScore() {
 
     questionArea.textContent = `Quiz Finished!\nYour Score: ${score}/${quizData.length}`;
 
-// Shows the restart quiz button and adds event listener so that quiz can be reloaded 
+    // Shows the restart quiz button and adds event listener so that quiz can be reloaded 
     fullReset.style.visibility = 'visible';
     buttonContainer.style.visibility = 'hidden';
 
