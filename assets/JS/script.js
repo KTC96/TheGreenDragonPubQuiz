@@ -132,7 +132,7 @@ function initializeQuiz() {
     });
 // Hides the restart quiz button
 
-  //  fullReset.style.visibility = 'hidden';
+  fullReset.style.visibility = 'hidden';
 }
 /** Displays a question and potential answers
  * 
