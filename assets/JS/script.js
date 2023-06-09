@@ -189,7 +189,7 @@ function handleAnswer(event) {
         } else {
             showFinalScore();
         }
-    }, 300);
+    }, 2000);
 }
 
 /**
@@ -233,7 +233,7 @@ function showFinalScore() {
 
 highScoreElement.textContent = highScore.toString();
 
-// Call the initialization function
+// Calls the initialization function
 
 initializeQuiz();
 
