@@ -2,6 +2,8 @@ body {
     background-color: black;
     font-family: "cardo", sans-serif;
     color: #FBC841;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
     text-align: center;
     background: url('../images/rivendell-7713475.jpg') repeat-y left right;
 
@@ -14,6 +16,8 @@ body {
     max-width: 70%;
     margin: auto;
     padding: 1%;
+
+
 }
 
 .container {
@@ -54,9 +58,8 @@ body {
 
 
 .answer-button {
-   
-    background-color: white;
-    border: 10px solid;
+    border: 5px solid;
+    border-color: black;
     width: 80%;
     height: 80px;
     font-size: 2.5rem;
@@ -68,8 +71,33 @@ body {
     justify-content: center;
     font-family: "cardo", sans-serif;
     font-weight: 600;
-    
+    color: #FBC841;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
+}
+
+#hobbit {
+    background-image: url('../images/hobbit-4495138_1280.jpg');
+    background-size: cover;
+    background-position: 90% 65%;
+}
+
+#mountain {
+    background-image: url('../images/mount-2412348_1280.jpg');
+    background-size: cover;
+    background-position: 50% 37%;
+}
+
+#ring {
+    background-image: url('../images/ring-4612457_1280.jpg');
+    background-size: cover;
+    background-position: 50% 60%;
+}
+
+#volcano {
+    background-image: url('../images/toby-elliott-mBXXP7ns6lM-unsplash.jpg');
+    background-size: cover;
+    background-position: 50% 60%;
 }
 
 .answer-button:hover {
@@ -93,7 +121,7 @@ body {
 }
 
 #high-score {
-    color:#FBC841;
+    color: #FBC841;
     font-weight: bold;
 }
 
@@ -121,14 +149,11 @@ body {
     background-image: url('../images/middle-earth-4760561_1280.jpg');
     background-size: cover;
 
-    
-}
 
-    
-  
+}
 
 
 #fullReset:hover {
     border-color: #FBC841;
-    
+
 }
