@@ -4,6 +4,7 @@ body {
     color: #FBC841;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     text-align: center;
+    margin: 0;
 }
 
 /*Hamburger Menu*/
@@ -213,6 +214,13 @@ body {
 
     .game-area {
         max-width: 90%;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .game-area {
+        margin-bottom: 20px; 
     }
 }
 
