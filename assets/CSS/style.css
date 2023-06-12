@@ -3,28 +3,24 @@ body {
     font-family: "cardo", sans-serif;
     color: #FBC841;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-
     text-align: center;
-    background: url('../images/rivendell-7713475.jpg') repeat-y left right;
-
 }
 
 /*Hamburger Menu*/
+
 .settings,
 #menu {
-
     position: absolute;
     top: 0;
     right: 0;
     color: #FBC841;
-    margin: 45px 5% 0 0;
+    margin: 2% 5% 0 0;
 }
-
 
 .fa-times {
     position: absolute;
     right: 0;
-    margin-right: 20px;
+    margin-right: 2%;
 }
 
 .settingsMenu {
@@ -56,18 +52,14 @@ body {
     margin-top: 10px;
 }
 
-
-
-.settingsMenu .close , .fa-gear {
+.settingsMenu .close,
+.fa-gear {
     width: 20px;
     height: 20px;
     font-size: 2rem;
     margin: 3% 4% 0 0;
-    
+
 }
-
-
-
 
 .main-heading {
     font-family: "Cinzel Decorative", sans-serif;
@@ -79,8 +71,6 @@ body {
 
 
 }
-
-
 
 .game-area {
     background-color: #0f4e06;
@@ -104,12 +94,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-
-
 }
-
-
 
 .answer-button {
     border: 5px solid;
@@ -127,7 +112,6 @@ body {
     font-weight: 600;
     color: #FBC841;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-
 }
 
 #hobbit {
@@ -159,9 +143,11 @@ body {
 }
 
 .score-area {
-    margin: 5px auto;
-    width: 60%;
-    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 25px;
+    font-size: 1rem;
 }
 
 #score {
@@ -180,14 +166,14 @@ body {
 }
 
 .scores {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 25px;
+    gap: 10px;
 }
 
-
-
 #fullReset {
-
     background-color: white;
     border: 5px solid;
     width: 30%;
@@ -202,12 +188,52 @@ body {
     margin-top: -5%;
     background-image: url('../images/middle-earth-4760561_1280.jpg');
     background-size: cover;
-
-
 }
-
 
 #fullReset:hover {
     border-color: #FBC841;
+}
 
+/* Media queries */
+
+
+@media (max-width: 507px){
+    .score-area {
+       
+
+    }
+}
+
+
+@media (max-width: 767px) {
+    .main-heading {
+        font-size: 2rem;
+        max-width: 90%;
+    }
+
+    .game-area {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .main-heading {
+        font-size: 3rem;
+        max-width: 80%;
+    }
+
+    .game-area {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-heading {
+        font-size: 4rem;
+        max-width: 80%;
+    }
+
+    .game-area {
+        max-width: 80%;
+    }
 }

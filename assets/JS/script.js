@@ -1,5 +1,4 @@
-
-
+//Hamburger settings menu
 
 let toggleMenu = document.getElementById("settingsMenu");
 /**
@@ -12,9 +11,6 @@ function openMenu() {
 function closeMenu() {
     toggleMenu.style.display = "none";
 }
-
-
-
 
 
 
@@ -148,6 +144,7 @@ function initializeQuiz() {
 
     answerButtons.forEach((button) => {
         button.addEventListener('click', (event) => handleAnswer(event));
+
     });
 
     // Hides the restart quiz button
@@ -254,7 +251,7 @@ function showFinalScore() {
 
 highScoreElement.textContent = highScore.toString();
 
+
 // Calls the initialization function
 
 initializeQuiz();
-
