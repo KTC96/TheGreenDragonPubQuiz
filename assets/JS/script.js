@@ -1,3 +1,24 @@
+
+
+
+let toggleMenu = document.getElementById("settingsMenu");
+/**
+ * Hamburgermenu toggle to open and close
+ */
+function openMenu() {
+    toggleMenu.style.display = "block";
+}
+
+function closeMenu() {
+    toggleMenu.style.display = "none";
+}
+
+
+
+
+
+
+
 // Array containing questions, answers and correct answers
 const quizData = [{
         question: 'Who is the steward of Gondor before Aragorn returns to claim the throne?',

@@ -9,6 +9,66 @@ body {
 
 }
 
+/*Hamburger Menu*/
+.settings,
+#menu {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #FBC841;
+    margin: 45px 5% 0 0;
+}
+
+
+.fa-times {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
+
+.settingsMenu {
+    width: 160px;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #0f4e06;
+    padding: 2%;
+    margin: 0;
+    z-index: 4;
+    animation: open 1.3s ease forwards;
+}
+
+@keyframes open {
+    0% {
+        transform: translateX(120%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.settingsMenu li {
+    list-style: none;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+
+
+.settingsMenu .close , .fa-gear {
+    width: 20px;
+    height: 20px;
+    font-size: 2rem;
+    margin: 3% 4% 0 0;
+    
+}
+
+
+
+
 .main-heading {
     font-family: "Cinzel Decorative", sans-serif;
     text-align: center;
@@ -20,13 +80,7 @@ body {
 
 }
 
-.container {
-    background-image: url('../images/rivendell-7713475.jpg'), url('../images/rivendell-7713475.jpg');
-    background-repeat: no-repeat;
-    background-position: left top, right top;
-    background-size: 15% 100%;
 
-}
 
 .game-area {
     background-color: #0f4e06;
