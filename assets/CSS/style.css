@@ -1,10 +1,10 @@
 body {
-    background-color: black;
     font-family: "cardo", sans-serif;
-    color: #FBC841;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     text-align: center;
     margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-shadow: var(var(--shadow-color));
 }
 
 /*Hamburger Menu*/
@@ -30,7 +30,7 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #0f4e06;
+    background-color: var(--bg-color);
     padding: 2%;
     margin: 0;
     z-index: 4;
@@ -62,6 +62,32 @@ body {
 
 }
 
+
+.light {
+    color: #FBC841;
+}
+
+.dark {
+    color: #000;
+}
+
+:root,
+:root.light {
+    --bg-color: #407f37;
+    --text-color: #000;
+    --bg-color2: #FFFFFF;
+    --shadow-color: none;
+}
+
+:root.dark {
+    --bg-color: #121212;
+    --text-color: #FBC841;
+    --shadow-color: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    --bg-color2: #0f4e06;
+}
+
+
+
 .main-heading {
     font-family: "Cinzel Decorative", sans-serif;
     text-align: center;
@@ -75,6 +101,7 @@ body {
 
 .game-area {
     background-color: #0f4e06;
+    background-color: var(--bg-color2);
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -198,14 +225,6 @@ body {
 /* Media queries */
 
 
-@media (max-width: 507px){
-    .score-area {
-       
-
-    }
-}
-
-
 @media (max-width: 767px) {
     .main-heading {
         font-size: 2rem;
@@ -220,7 +239,7 @@ body {
 
 @media (min-width: 768px) {
     .game-area {
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
     }
 }
 

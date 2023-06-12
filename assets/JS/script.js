@@ -1,3 +1,5 @@
+const setTheme = theme => document.documentElement.className = theme;
+
 //Hamburger settings menu
 
 let toggleMenu = document.getElementById("settingsMenu");
