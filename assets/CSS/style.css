@@ -2,7 +2,7 @@ body {
     font-family: "cardo", sans-serif;
     text-align: center;
     margin: 0;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color2);
     color: var(--text-color);
     text-shadow: var(var(--shadow-color));
 }
@@ -71,19 +71,18 @@ body {
     color: #000;
 }
 
-:root,
-:root.light {
-    --bg-color: #407f37;
+:root.light{
+    --bg-color2: #407f37;
     --text-color: #000;
-    --bg-color2: #FFFFFF;
+    --bg-color: #FFFFFF;
     --shadow-color: none;
 }
 
-:root.dark {
-    --bg-color: #121212;
+:root{
+    --bg-color2: #121212;
     --text-color: #FBC841;
     --shadow-color: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    --bg-color2: #0f4e06;
+    --bg-color: #0f4e06;
 }
 
 
@@ -100,8 +99,8 @@ body {
 }
 
 .game-area {
-    background-color: #0f4e06;
-    background-color: var(--bg-color2);
+    
+    background-color: var(--bg-color);
     box-sizing: border-box;
     width: 100%;
     height: 100%;
