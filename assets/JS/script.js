@@ -6,10 +6,9 @@ const setTheme = theme => document.documentElement.className = theme;
 
 function playMenuSound() {
     var menuSound = document.getElementById("menuSound");
-    menuSound.currentTime = 0; // Reset the audio to the beginning
+    menuSound.currentTime = 0;
     menuSound.play();
 }
-
 
 //Hamburger settings menu
 
@@ -26,11 +25,6 @@ function closeMenu() {
     toggleMenu.style.display = "none";
     playMenuSound();
 }
-
-
-
-
-
 
 // Array containing questions, answers and correct answers
 const quizData = [{
@@ -54,7 +48,7 @@ const quizData = [{
         correctAnswer: 1
     },
     {
-        question: 'Who is the founder and of Rohan?',
+        question: 'Who was the founder of Rohan?',
         answers: ['Theoden', 'King Eorl', 'Halbrand', 'Aragorn'],
         correctAnswer: 1
     },
@@ -105,7 +99,7 @@ const quizData = [{
         correctAnswer: 3
     },
     {
-        question: 'What is the name of the fortress and city ruled by the steward Denethor in Gondor?',
+        question: 'What is the name of the fortress city ruled by the steward Denethor in Gondor?',
         answers: ['Osgiliath', 'Minas Tirith', 'Minas Morgul', 'Umbar'],
         correctAnswer: 1
     },
@@ -198,16 +192,22 @@ function handleAnswer(event) {
     if (selectedAnswer === question.correctAnswer) {
         selectedButton.style.borderColor = 'green';
         selectedButton.style.color = 'green';
+        playSound(true);
         score++;
         updateScore();
+
     } else {
         selectedButton.style.borderColor = 'red';
         selectedButton.style.color = 'red';
+        playSound(false);
         incorrect++;
         updateIncorrectCount();
         answerButtons[question.correctAnswer].style.borderColor = 'green';
         answerButtons[question.correctAnswer].style.color = 'green';
+
     }
+
+
 
     setTimeout(() => {
         answerButtons.forEach((button) => {
@@ -224,7 +224,37 @@ function handleAnswer(event) {
         } else {
             showFinalScore();
         }
-    }, 2000);
+    }, 4000);
+}
+
+// Function to play sound based on correct/incorrect answer
+function playSound(correct) {
+    var soundFiles = [];
+
+    if (correct) {
+        soundFiles = [
+            'assets/audio/Voicy_Not_bad.mp3',
+            'assets/audio/even-the-smallest-person-can-change-the-course-of-the-future.mp3',
+            'assets/audio/you-are-full-of-surprises-master-baggins.mp3',
+            'assets/audio/opening-144757.mp3',
+            'assets/audio/tada-fanfare-a-6313.mp3',
+            
+        ];
+    } else {
+        soundFiles = [
+            'assets/audio/Voicy_Fool_of_a_Took.mp3',
+            'assets/audio/Voicy_Nobody_likes_you.mp3',
+            'assets/audio/Voicy_What_do_you_mean.mp3',
+            'assets/audio/you-are-sure-of-this-b4f.mp3',
+            'assets/audio/fail-144746.mp3',
+            'assets/audio/failure-drum-sound-effect-2-7184.mp3'
+
+        ];
+    }
+
+    var soundFile = soundFiles[Math.floor(Math.random() * soundFiles.length)];
+    var audio = new Audio(soundFile);
+    audio.play();
 }
 
 /**
@@ -259,10 +289,30 @@ function showFinalScore() {
     fullReset.style.visibility = 'visible';
     buttonContainer.style.visibility = 'hidden';
 
+    playSoundFinish();
+
     fullReset.addEventListener('click', function (e) {
+        playSoundRestart();
         location.reload();
     }, false);
+
 }
+// Song to play when quiz finished
+function playSoundFinish() {
+    var soundFile = 'assets/audio/three-hunters-lotr-by-voicemod.mp3'; 
+    var audio = new Audio(soundFile);
+    audio.play();
+}
+
+//Sound effect when restart button is clicked
+function playSoundRestart() {
+    var soundFile = 'assets/audio/sword_effect.mp3'; //
+    var audio = new Audio(soundFile);
+    audio.play();
+}
+
+
+
 
 // Display highscore from local storage 
 
