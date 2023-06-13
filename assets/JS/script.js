@@ -1,4 +1,15 @@
+//Code for light/dark theme
+
 const setTheme = theme => document.documentElement.className = theme;
+
+//Hamburger menu sound effect
+
+function playMenuSound() {
+    var menuSound = document.getElementById("menuSound");
+    menuSound.currentTime = 0; // Reset the audio to the beginning
+    menuSound.play();
+}
+
 
 //Hamburger settings menu
 
@@ -8,11 +19,15 @@ let toggleMenu = document.getElementById("settingsMenu");
  */
 function openMenu() {
     toggleMenu.style.display = "block";
+    playMenuSound();
 }
 
 function closeMenu() {
     toggleMenu.style.display = "none";
+    playMenuSound();
 }
+
+
 
 
 
