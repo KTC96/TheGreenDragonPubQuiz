@@ -223,6 +223,8 @@ body {
 
 /* Media queries */
 
+/* Small Screen sizes */
+
 
 @media (max-width: 767px) {
     .main-heading {
@@ -233,6 +235,15 @@ body {
     .game-area {
         max-width: 90%;
         margin-bottom: 0;
+    }
+
+    .answer-button {
+        font-size: 1.5rem;
+        align-items: center;
+    }
+
+    #question {
+        font-size: 1rem;
     }
 }
 
