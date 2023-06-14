@@ -238,7 +238,7 @@ function playSound(correct) {
             'assets/audio/you-are-full-of-surprises-master-baggins.mp3',
             'assets/audio/opening-144757.mp3',
             'assets/audio/tada-fanfare-a-6313.mp3',
-            
+
         ];
     } else {
         soundFiles = [
@@ -299,7 +299,7 @@ function showFinalScore() {
 }
 // Song to play when quiz finished
 function playSoundFinish() {
-    var soundFile = 'assets/audio/three-hunters-lotr-by-voicemod.mp3'; 
+    var soundFile = 'assets/audio/three-hunters-lotr-by-voicemod.mp3';
     var audio = new Audio(soundFile);
     audio.play();
 }

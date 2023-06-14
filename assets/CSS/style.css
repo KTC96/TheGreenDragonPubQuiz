@@ -66,12 +66,11 @@ body {
 
 /* Light/Dark theme */
 
-
-.light {
-    color: #FBC841;
+.light, .on {
+    color: #0f4e06;
 }
 
-.dark {
+.dark, .off {
     color: #000;
 }
 
