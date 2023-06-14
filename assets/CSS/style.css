@@ -63,6 +63,10 @@ body {
 }
 
 
+
+/* Light/Dark theme */
+
+
 .light {
     color: #FBC841;
 }
@@ -71,35 +75,35 @@ body {
     color: #000;
 }
 
-:root.light{
+:root.light {
     --bg-color2: #407f37;
     --text-color: #000;
     --bg-color: #FFFFFF;
     --shadow-color: none;
 }
 
-:root{
+:root {
     --bg-color2: #121212;
     --text-color: #FBC841;
     --shadow-color: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     --bg-color: #0f4e06;
 }
 
-
+/* Main game */
 
 .main-heading {
     font-family: "Cinzel Decorative", sans-serif;
     text-align: center;
     font-size: 2.5rem;
     max-width: 70%;
-    margin: auto;
+    margin: 0% 10%;
     padding: 1%;
 
 
 }
 
 .game-area {
-    
+
     background-color: var(--bg-color);
     box-sizing: border-box;
     width: 100%;
@@ -225,11 +229,16 @@ body {
 
 /* Small Screen sizes */
 
-
 @media (max-width: 767px) {
     .main-heading {
+        font-size: 1.5rem;
+        max-width: 90%;
+    }
+
+    .fa-gear {
         font-size: 2rem;
         max-width: 90%;
+
     }
 
     .game-area {
@@ -245,6 +254,10 @@ body {
     #question {
         font-size: 1rem;
     }
+
+    .fa-gear {
+        font-size: 1.5rem;
+    }
 }
 
 @media (min-width: 768px) {
@@ -259,6 +272,12 @@ body {
         max-width: 80%;
     }
 
+    .fa-gear {
+        font-size: 3rem;
+        max-width: 80%;
+
+    }
+
     .game-area {
         max-width: 90%;
     }
@@ -267,6 +286,12 @@ body {
 @media (min-width: 1024px) {
     .main-heading {
         font-size: 4rem;
+        max-width: 80%;
+
+    }
+
+    .fa-gear {
+        font-size: 3rem;
         max-width: 80%;
     }
 
