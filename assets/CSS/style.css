@@ -66,11 +66,13 @@ body {
 
 /* Light/Dark theme */
 
-.light, .on {
+.light,
+.on {
     color: #0f4e06;
 }
 
-.dark, .off {
+.dark,
+.off {
     color: #000;
 }
 
@@ -204,7 +206,6 @@ body {
 }
 
 #fullReset {
-    background-color: white;
     border: 5px solid;
     width: 30%;
     height: 20%;
@@ -213,12 +214,12 @@ body {
     position: absolute;
     z-index: 10;
     left: 50%;
-    margin-left: -15%;
     top: 50%;
-    margin-top: -5%;
+    transform: translate(-50%, -50%);
     background-image: url('../images/middle-earth-4760561_1280.webp');
     background-size: cover;
 }
+
 
 #fullReset:hover {
     border-color: #FBC841;
@@ -227,6 +228,14 @@ body {
 /* Media queries */
 
 /* Small Screen sizes */
+
+@media (max-width: 480px) {
+    #fullReset {
+        width: 50%;
+        height: 20%;
+        font-size: 1.5rem;
+    }
+}
 
 @media (max-width: 767px) {
     .main-heading {
@@ -256,6 +265,12 @@ body {
 
     .fa-gear {
         font-size: 1.5rem;
+    }
+
+    #fullReset {
+        font-size: 2rem;
+        width: 40%;
+        height: 20%;
     }
 }
 
