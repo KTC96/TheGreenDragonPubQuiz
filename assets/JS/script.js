@@ -1,90 +1,3 @@
-//Code for light/dark theme
-
-const setTheme = theme => document.documentElement.className = theme;
-
-//Hamburger menu sound effect
-
-function playMenuSound() {
-    var menuSound = document.getElementById("menuSound");
-    menuSound.currentTime = 0;
-    menuSound.play();
-}
-
-//Hamburger settings menu
-
-let toggleMenu = document.getElementById("settingsMenu");
-/**
- * Hamburgermenu toggle to open and close
- */
-function openMenu() {
-    toggleMenu.style.display = "block";
-    playMenuSound();
-}
-
-function closeMenu() {
-    toggleMenu.style.display = "none";
-    playMenuSound();
-}
-
-
-// Submit username function
-let submit = document.getElementById('submit');
-
-submit.addEventListener('click', setUsername);
-
-function setUsername() {
-    let usernameInput = document.getElementById("username");
-    let username = usernameInput.value.trim();
-
-    if (username === '') {
-        alert('Please enter your name!');
-    } else {
-        localStorage.setItem('name', username);
-        submit.style.display = 'none';
-        usernameInput.style.display = 'none';
-        let label = document.getElementById('label');
-        label.textContent = `Good Luck, ${username}!`;
-        showHighScores();
-    }
-}
-
-// Function to display high scores
-function showHighScores() {
-    let highScores = getHighScores();
-    let highScoreList = document.getElementById('high-score-list');
-
-    // Clear previous high scores
-    highScoreList.innerHTML = '';
-
-    // Display top 3 high scores with usernames
-    for (let i = 0; i < highScores.length && i < 3; i++) {
-        let listItem = document.createElement('li');
-        listItem.textContent = `${highScores[i].username}: ${highScores[i].score}`;
-        highScoreList.appendChild(listItem);
-    }
-}
-
-// Function to get high scores from local storage
-function getHighScores() {
-    let highScores = localStorage.getItem('highScores');
-    return highScores ? JSON.parse(highScores) : [];
-}
-
-// Function to update high scores in local storage
-function updateHighScores(username, score) {
-    let highScores = getHighScores();
-    highScores.push({
-        username,
-        score
-    });
-    highScores.sort((a, b) => b.score - a.score); // Sort high scores in descending order
-    highScores = highScores.slice(0, 3); // Keep only the top 3 high scores
-    localStorage.setItem('highScores', JSON.stringify(highScores));
-}
-
-
-
-
 // Array containing questions, answers and correct answers
 const quizData = [{
         question: 'Who is the steward of Gondor before Aragorn returns to claim the throne?',
@@ -266,8 +179,6 @@ function handleAnswer(event) {
 
     }
 
-
-
     setTimeout(() => {
         answerButtons.forEach((button) => {
             button.style.borderColor = '';
@@ -284,36 +195,6 @@ function handleAnswer(event) {
             showFinalScore();
         }
     }, 100);
-}
-
-// Function to play sound based on correct/incorrect answer
-function playSound(correct) {
-    var soundFiles = [];
-
-    if (correct) {
-        soundFiles = [
-            'assets/audio/Voicy_Not_bad.mp3',
-            'assets/audio/even-the-smallest-person-can-change-the-course-of-the-future.mp3',
-            'assets/audio/you-are-full-of-surprises-master-baggins.mp3',
-            'assets/audio/opening-144757.mp3',
-            'assets/audio/tada-fanfare-a-6313.mp3',
-
-        ];
-    } else {
-        soundFiles = [
-            'assets/audio/Voicy_Fool_of_a_Took.mp3',
-            'assets/audio/Voicy_Nobody_likes_you.mp3',
-            'assets/audio/Voicy_What_do_you_mean.mp3',
-            'assets/audio/you-are-sure-of-this-b4f.mp3',
-            'assets/audio/fail-144746.mp3',
-            'assets/audio/failure-drum-sound-effect-2-7184.mp3'
-
-        ];
-    }
-
-    var soundFile = soundFiles[Math.floor(Math.random() * soundFiles.length)];
-    var audio = new Audio(soundFile);
-    audio.play();
 }
 
 /**
@@ -356,21 +237,40 @@ function showFinalScore() {
     }, false);
 
 }
-// Song to play when quiz finished
-function playSoundFinish() {
-    var soundFile = 'assets/audio/three-hunters-lotr-by-voicemod.mp3';
-    var audio = new Audio(soundFile);
-    audio.play();
+
+// Function to display high scores
+function showHighScores() {
+    let highScores = getHighScores();
+    let highScoreList = document.getElementById('high-score-list');
+
+    // Clear previous high scores
+    highScoreList.innerHTML = '';
+
+    // Display top 3 high scores with usernames
+    for (let i = 0; i < highScores.length && i < 3; i++) {
+        let listItem = document.createElement('li');
+        listItem.textContent = `${highScores[i].username}: ${highScores[i].score}`;
+        highScoreList.appendChild(listItem);
+    }
 }
 
-//Sound effect when restart button is clicked
-function playSoundRestart() {
-    var soundFile = 'assets/audio/sword_effect.mp3'; //
-    var audio = new Audio(soundFile);
-    audio.play();
+// Function to get high scores from local storage
+function getHighScores() {
+    let highScores = localStorage.getItem('highScores');
+    return highScores ? JSON.parse(highScores) : [];
 }
 
-
+// Function to update high scores in local storage
+function updateHighScores(username, score) {
+    let highScores = getHighScores();
+    highScores.push({
+        username,
+        score
+    });
+    highScores.sort((a, b) => b.score - a.score); // Sort high scores in descending order
+    highScores = highScores.slice(0, 3); // Keep only the top 3 high scores
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+}
 
 
 // Display highscore from local storage 
