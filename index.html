@@ -65,10 +65,20 @@
                 <button id="ring" class="answer-button"></button>
                 <button id="volcano" class="answer-button"></button>
             </div>
+            <div id="form-container">
+                <form method="POST">
+                    <label for="username" id="label">Username:</label>
+                    <br>
+                    <input type="text" id="username" name="user-name" placeholder="Type your name here!" required>
+                </form>
+                <!-- submit username and proceeds to show welcome message and start button once submitted -->
+                <button id="submit" class="user-btn">SUBMIT</button>
+            </div>
             <div class="score-area">
                 <p class="scores">Correct Answers <span id="score">0</span></p>
                 <p class="scores">Incorrect Answers <span id="incorrect-count">0</span></p>
                 <p class="scores">High Score <span id="high-score">0</span></p>
+                <ul id="high-score-list"></ul>
             </div>
         </div>
     </div>
