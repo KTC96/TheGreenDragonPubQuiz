@@ -64,8 +64,6 @@ body {
 
 }
 
-
-
 /* Light/Dark theme */
 
 .light, .on {
@@ -147,25 +145,25 @@ body {
 }
 
 #hobbit {
-    background-image: url('../images/hobbit-4495138_1280.jpg');
+    background-image: url('../images/hobbit-4495138_1280.webp');
     background-size: cover;
     background-position: 90% 65%;
 }
 
 #mountain {
-    background-image: url('../images/mount-2412348_1280.jpg');
+    background-image: url('../images/mount-2412348_1280.webp');
     background-size: cover;
     background-position: 50% 37%;
 }
 
 #ring {
-    background-image: url('../images/ring-4612457_1280.jpg');
+    background-image: url('../images/ring-4612457_1280.webp');
     background-size: cover;
     background-position: 50% 60%;
 }
 
 #volcano {
-    background-image: url('../images/toby-elliott-mBXXP7ns6lM-unsplash.jpg');
+    background-image: url('../images/toby-elliott-mBXXP7ns6lM-unsplash.webp');
     background-size: cover;
     background-position: 50% 60%;
 }
@@ -218,7 +216,7 @@ body {
     margin-left: -15%;
     top: 50%;
     margin-top: -5%;
-    background-image: url('../images/middle-earth-4760561_1280.jpg');
+    background-image: url('../images/middle-earth-4760561_1280.webp');
     background-size: cover;
 }
 
