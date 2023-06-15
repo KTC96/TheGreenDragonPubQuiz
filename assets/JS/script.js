@@ -1,3 +1,6 @@
+/* YouTube tutorial followed to help set up basic aspects of quiz 
+ https://www.youtube.com/watch?v=PBcqGxrr9g8 */
+
 // Array containing questions, answers and correct answers
 const quizData = [{
         question: 'Who is the steward of Gondor before Aragorn returns to claim the throne?',
@@ -116,6 +119,10 @@ const buttonContainer = document.getElementById('button-container');
 let currentQuestion = 0;
 let score = 0;
 let incorrect = 0;
+
+/* Base code for local storage: 
+https://blog.logrocket.com/localstorage-javascript-complete-guide/#storing-data-browser-with-localstorage */
+
 let highScore = parseInt(localStorage.getItem('highScore')) || 0;
 let questionAnswered = false;
 
@@ -160,6 +167,7 @@ function handleAnswer(event) {
     if (questionAnswered) {
         return;
     }
+// Flag variables base information: http://www.javascriptkit.com/javatutors/valid2.shtml
 
     questionAnswered = true;
     const selectedButton = event.target;
@@ -185,7 +193,9 @@ function handleAnswer(event) {
         answerButtons[question.correctAnswer].style.color = 'green';
 
     }
-//
+/* Base code for delay between answering questions:
+https://www.w3schools.com/jsref/met_win_settimeout.asp */
+
     setTimeout(() => {
         answerButtons.forEach((button) => {
             button.style.borderColor = '';
@@ -227,6 +237,9 @@ function updateIncorrectCount() {
  * Updates high score if the current score is higher than the previous high score.
  * Provides message that the quiz is over and shows restart quiz button.
  */
+
+/* Code base taken from https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button */
+
 function showFinalScore() {
     if (score > highScore) {
         highScore = score;
@@ -236,6 +249,9 @@ function showFinalScore() {
     questionArea.textContent = `Quiz Finished!\nYour Score: ${score}/${quizData.length}`;
     scoreElement.textContent = score;
     highScoreElement.textContent = highScore.toString();
+
+    /* Hidden element button inspired from
+    https://stackoverflow.com/questions/45602167/make-html-div-with-display-none-visible-again-loading-image-before-li */
 
     fullReset.style.visibility = 'visible';
     buttonContainer.style.visibility = 'hidden';
@@ -249,7 +265,10 @@ function showFinalScore() {
 
 }
 
-// Function to display high scores
+/**Function to display high scores and display alongside username in high
+ * scores area
+*/
+
 function showHighScores() {
     let highScores = getHighScores();
     let highScoreList = document.getElementById('high-score-list');
@@ -265,21 +284,24 @@ function showHighScores() {
     }
 }
 
-// Function to get high scores from local storage
+/** Function to get high scores from local storage */
+
 function getHighScores() {
     let highScores = localStorage.getItem('highScores');
     return highScores ? JSON.parse(highScores) : [];
 }
 
-// Function to update high scores in local storage
+/** Function to update high scores in local storage */
+
 function updateHighScores(username, score) {
     let highScores = getHighScores();
     highScores.push({
         username,
         score
     });
-    highScores.sort((a, b) => b.score - a.score); // Sort high scores in descending order
-    highScores = highScores.slice(0, 3); // Keep only the top 3 high scores
+    // Sort high scores into descending order and keep only the top 3 high scores- NOT WORKING
+    highScores.sort((a, b) => b.score - a.score); 
+    highScores = highScores.slice(0, 3); 
     localStorage.setItem('highScores', JSON.stringify(highScores));
 }
 

@@ -1,4 +1,5 @@
 //Code for light/dark theme
+// Code base taken from:  https://webdesign.tutsplus.com/tutorials/color-schemes-with-css-variables-and-javascript--cms-36989
 
 const setTheme = theme => document.documentElement.className = theme;
 
@@ -40,7 +41,10 @@ function playSoundRestart() {
     audio.play();
 }
 
-// Function to play sound based on correct/incorrect answer
+/**  Function to play sound based on correct/incorrect answer*/
+/* Code base information: 
+https://stackoverflow.com/questions/74215959/how-can-i-use-javascript-to-play-a-random-audio-on-click */
+
 function playSound(correct) {
     var soundFiles = [];
 
