@@ -152,6 +152,11 @@ function showQuestion() {
  * and incorrect in red. After a 3 second delay the next question and answers are shown. 
  */
 function handleAnswer(event) {
+    if (!isUsernameSubmitted) {
+        alert('Please enter a username');
+        return;
+
+    }
     if (questionAnswered) {
         return;
     }
@@ -161,6 +166,7 @@ function handleAnswer(event) {
     const question = quizData[currentQuestion];
     const selectedAnswer = Array.from(answerButtons).indexOf(selectedButton);
 
+        // Highlights the button and button text greeen if correct answer is chosen
     if (selectedAnswer === question.correctAnswer) {
         selectedButton.style.borderColor = 'green';
         selectedButton.style.color = 'green';
@@ -168,6 +174,7 @@ function handleAnswer(event) {
         score++;
         updateScore();
 
+        // Highlights the button and button text red if incorrect answer is chosen
     } else {
         selectedButton.style.borderColor = 'red';
         selectedButton.style.color = 'red';
@@ -178,12 +185,11 @@ function handleAnswer(event) {
         answerButtons[question.correctAnswer].style.color = 'green';
 
     }
-
+//
     setTimeout(() => {
         answerButtons.forEach((button) => {
             button.style.borderColor = '';
             button.style.color = '';
-            button.disabled = false;
         });
 
         currentQuestion++;
@@ -194,7 +200,12 @@ function handleAnswer(event) {
         } else {
             showFinalScore();
         }
-    }, 100);
+
+        // Hide good luck message after first button is clicked 
+
+        const label = document.getElementById('label');
+        label.style.display = 'none';
+    }, 4000);
 }
 
 /**

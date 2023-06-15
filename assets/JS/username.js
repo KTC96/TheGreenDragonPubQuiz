@@ -1,7 +1,6 @@
 //Submit username function
 
-let submit = document.getElementById('submit');
-
+let isUsernameSubmitted = false;
 submit.addEventListener('click', setUsername);
 
 function setUsername() {
@@ -12,10 +11,12 @@ function setUsername() {
         alert('Please enter your name!');
     } else {
         localStorage.setItem('name', username);
+        isUsernameSubmitted = true; 
         submit.style.display = 'none';
         usernameInput.style.display = 'none';
         let label = document.getElementById('label');
         label.textContent = `Good Luck, ${username}!`;
         showHighScores();
+        
     }
 }
