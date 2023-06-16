@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="A quiz app testing your knowledge of the Lord Of The Rings Universe">
-    <meta name="keywords"
-        content="quiz, test, Lord Of The Rings, Pub Quiz, interactive">
+    <meta name="description" content="A quiz app testing your knowledge of the Lord Of The Rings Universe">
+    <meta name="keywords" content="quiz, test, Lord Of The Rings, Pub Quiz, interactive">
     <!-- css stylesheet-->
     <link rel="stylesheet" href="assets/CSS/style.css">
     <!-- fontawesome -->
@@ -82,10 +80,25 @@
                 <button id="submit" class="user-btn">SUBMIT</button>
             </div>
             <div class="score-area">
-                <p class="scores">Correct Answers <span id="score">0</span></p>
-                <p class="scores">Incorrect Answers <span id="incorrect-count">0</span></p>
-                <p class="scores">High Score <span id="high-score">0</span></p>
-                <ul class="scores" id="high-score-list"></ul>
+                <div class="score-row">
+                    <p class="score-label">Correct Answers</p>
+                    <p class="score-value" id="score">0</p>
+                </div>
+                <div class="score-row">
+                    <p class="score-label">Incorrect Answers</p>
+                    <p class="score-value" id="incorrect-count">0</p>
+                </div>
+                <div class="score-row">
+                    <p class="score-label">High Score</p>
+                    <p class="score-value" id="high-score">0</p>
+                </div>
+                
+            </div>
+            <div class="high-scores">
+                <p class="high-scores-label"><u>High Scores</u></p>
+                <ol id="high-score-list"></ol>
+                <br>
+                <br>
             </div>
         </div>
     </div>

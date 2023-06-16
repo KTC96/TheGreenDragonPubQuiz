@@ -276,7 +276,7 @@ function updateHighScores(username, score) {
         username,
         score
     });
-    // Sort high scores into descending order and keep only the top 3 high scores- NOT WORKING
+    // Sort high scores into descending order and keep only the top 3 high scores
     highScores.sort((a, b) => b.score - a.score);
     highScores = highScores.slice(0, 3);
     localStorage.setItem('highScores', JSON.stringify(highScores));
