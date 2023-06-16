@@ -114,11 +114,13 @@ const scoreElement = document.getElementById('score');
 const highScoreElement = document.getElementById('high-score');
 const fullReset = document.getElementById('fullReset');
 const buttonContainer = document.getElementById('button-container');
+const usernameInput = document.getElementById('username');
 
 // Set initial variables to 0
 let currentQuestion = 0;
 let score = 0;
 let incorrect = 0;
+let username = '';
 
 /* Base code for local storage: 
 https://blog.logrocket.com/localstorage-javascript-complete-guide/#storing-data-browser-with-localstorage */
@@ -133,12 +135,11 @@ function initializeQuiz() {
     showQuestion();
 
     answerButtons.forEach((button) => {
-        button.addEventListener('click', (event) => handleAnswer(event));
-
+        button.addEventListener("click", (event) => handleAnswer(event));
     });
 
     // Hides the restart quiz button
-    fullReset.style.visibility = 'hidden';
+    fullReset.style.visibility = "hidden";
 }
 
 /**
@@ -158,48 +159,44 @@ function showQuestion() {
  * Increments the score if correct and the incorrect score if incorrect. Highlights correct answer border and text in green
  * and incorrect in red. After a 3 second delay the next question and answers are shown. 
  */
+
 function handleAnswer(event) {
     if (!isUsernameSubmitted) {
-        alert('Please enter a username');
+        alert("Please enter a username");
         return;
-
     }
+
     if (questionAnswered) {
         return;
     }
-// Flag variables base information: http://www.javascriptkit.com/javatutors/valid2.shtml
 
     questionAnswered = true;
     const selectedButton = event.target;
     const question = quizData[currentQuestion];
     const selectedAnswer = Array.from(answerButtons).indexOf(selectedButton);
 
-        // Highlights the button and button text greeen if correct answer is chosen
+    // Highlights the button and button text green if the correct answer is chosen
     if (selectedAnswer === question.correctAnswer) {
-        selectedButton.style.borderColor = 'green';
-        selectedButton.style.color = 'green';
+        selectedButton.style.borderColor = "green";
+        selectedButton.style.color = "green";
         playSound(true);
         score++;
         updateScore();
-
-        // Highlights the button and button text red if incorrect answer is chosen
     } else {
-        selectedButton.style.borderColor = 'red';
-        selectedButton.style.color = 'red';
+        // Highlights the button and button text red if the incorrect answer is chosen
+        selectedButton.style.borderColor = "red";
+        selectedButton.style.color = "red";
         playSound(false);
         incorrect++;
         updateIncorrectCount();
-        answerButtons[question.correctAnswer].style.borderColor = 'green';
-        answerButtons[question.correctAnswer].style.color = 'green';
-
+        answerButtons[question.correctAnswer].style.borderColor = "green";
+        answerButtons[question.correctAnswer].style.color = "green";
     }
-/* Base code for delay between answering questions:
-https://www.w3schools.com/jsref/met_win_settimeout.asp */
 
     setTimeout(() => {
         answerButtons.forEach((button) => {
-            button.style.borderColor = '';
-            button.style.color = '';
+            button.style.borderColor = "";
+            button.style.color = "";
         });
 
         currentQuestion++;
@@ -211,11 +208,10 @@ https://www.w3schools.com/jsref/met_win_settimeout.asp */
             showFinalScore();
         }
 
-        // Hide good luck message after first button is clicked 
-
-        const label = document.getElementById('label');
-        label.style.display = 'none';
-    }, 4000);
+        // Hide good luck message after the first button is clicked
+        const label = document.getElementById("label");
+        label.style.display = "none";
+    }, 100);
 }
 
 /**
@@ -240,55 +236,36 @@ function updateIncorrectCount() {
 
 /* Code base taken from https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button */
 
+
 function showFinalScore() {
     if (score > highScore) {
         highScore = score;
-        localStorage.setItem('highScore', highScore);
+        localStorage.setItem("highScore", highScore);
     }
 
     questionArea.textContent = `Quiz Finished!\nYour Score: ${score}/${quizData.length}`;
     scoreElement.textContent = score;
     highScoreElement.textContent = highScore.toString();
 
-    /* Hidden element button inspired from
-    https://stackoverflow.com/questions/45602167/make-html-div-with-display-none-visible-again-loading-image-before-li */
-
-    fullReset.style.visibility = 'visible';
-    buttonContainer.style.visibility = 'hidden';
+    fullReset.style.visibility = "visible";
+    buttonContainer.style.visibility = "hidden";
 
     playSoundFinish();
 
-    fullReset.addEventListener('click', function (e) {
+    fullReset.addEventListener("click", function (e) {
         playSoundRestart();
         location.reload();
     }, false);
 
+    updateHighScores(usernameInput.value, score);
 }
 
-/**Function to display high scores and display alongside username in high
- * scores area
-*/
-
-function showHighScores() {
-    let highScores = getHighScores();
-    let highScoreList = document.getElementById('high-score-list');
-
-    // Clear previous high scores
-    highScoreList.innerHTML = '';
-
-    // Display top 3 high scores with usernames
-    for (let i = 0; i < highScores.length && i < 3; i++) {
-        let listItem = document.createElement('li');
-        listItem.textContent = `${highScores[i].username}: ${highScores[i].score}`;
-        highScoreList.appendChild(listItem);
-    }
-}
-
-/** Function to get high scores from local storage */
-
-function getHighScores() {
-    let highScores = localStorage.getItem('highScores');
-    return highScores ? JSON.parse(highScores) : [];
+/**
+ * Retrieves the username entered by the user
+ */
+function getUsername() {
+    const usernameInput = document.getElementById('username-input');
+    return usernameInput.value;
 }
 
 /** Function to update high scores in local storage */
@@ -300,15 +277,44 @@ function updateHighScores(username, score) {
         score
     });
     // Sort high scores into descending order and keep only the top 3 high scores- NOT WORKING
-    highScores.sort((a, b) => b.score - a.score); 
-    highScores = highScores.slice(0, 3); 
+    highScores.sort((a, b) => b.score - a.score);
+    highScores = highScores.slice(0, 3);
     localStorage.setItem('highScores', JSON.stringify(highScores));
+
+    showHighScores();
+}
+
+/**Function to display high scores and display alongside username in high
+ * scores area
+ */
+
+function showHighScores() {
+    let highScores = getHighScores();
+    let highScoreList = document.getElementById('high-score-list');
+
+    // Clear previous high scores
+    highScoreList.innerHTML = '';
+
+    // Display top 3 high scores with usernames
+    for (let i = 0; i < highScores.length && i < 3; i++) {
+        let listItem = document.createElement("li");
+        listItem.textContent = listItem.textContent = highScores[i].username + ': ' + highScores[i].score + '/' + quizData.length;
+        highScoreList.appendChild(listItem);
+    }
 }
 
 
+/** Function to get high scores from local storage */
+
+function getHighScores() {
+    let highScores = localStorage.getItem('highScores');
+    return highScores ? JSON.parse(highScores) : [];
+}
+
 // Display highscore from local storage 
 
-highScoreElement.textContent = highScore.toString();
+showHighScores();
+
 
 
 // Calls the initialization function
