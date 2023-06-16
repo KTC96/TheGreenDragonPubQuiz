@@ -211,7 +211,7 @@ function handleAnswer(event) {
         // Hide good luck message after the first button is clicked
         const label = document.getElementById("label");
         label.style.display = "none";
-    }, 100);
+    }, 4000);
 }
 
 /**
