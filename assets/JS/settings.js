@@ -7,6 +7,7 @@ const setTheme = theme => document.documentElement.className = theme;
 
 var audioOn = true;
 var audio = null;
+
 function playMenuSound() {
     if (audioOn) {
         var menuSound = document.getElementById("menuSound");
@@ -92,3 +93,5 @@ function playSound(correct) {
 
     }
 }
+
+

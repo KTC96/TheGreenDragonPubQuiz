@@ -65,29 +65,35 @@ body {
 
 /* Light/Dark theme */
 
-.light,
-.on {
-    color: #0f4e06;
-}
-
-.dark,
-.off {
-    color: #000;
+:root,
+:root.dark {
+    --bg-color2: #121212;
+    --text-color: #FBC841;
+    --shadow-color: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    --bg-color: #0f4e06;
 }
 
 :root.light {
     --bg-color2: #FFFFFF;
-    ;
     --text-color: #000;
     --bg-color: #90ee90;
     --shadow-color: none;
 }
 
-:root {
-    --bg-color2: #121212;
-    --text-color: #FBC841;
-    --shadow-color: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    --bg-color: #0f4e06;
+.theme-btn {
+    width: 3em;
+    height: 3em;
+    padding: 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.theme-btn img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 /* Main game */
@@ -207,8 +213,8 @@ body {
 }
 
 #submit {
-    background-color:#FBC841;
-   font-family: "Cinzel Decorative", sans-serif;
+    background-color: #FBC841;
+    font-family: "Cinzel Decorative", sans-serif;
 }
 
 #submit:hover {
