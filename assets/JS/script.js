@@ -236,8 +236,6 @@ function updateIncorrectCount() {
 
 /* Code base to reset quiz taken from https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button */
 
-
-
 function showFinalScore() {
     if (score > highScore) {
         highScore = score;
@@ -260,7 +258,6 @@ function showFinalScore() {
 
     updateHighScores(usernameInput.value, score);
 }
-
 
 /** Function to update high scores in local storage */
 /* I followed this tutorial to help load and display scores from local storage https://www.youtube.com/watch?v=jfOv18lCMmw */
@@ -298,7 +295,6 @@ function showHighScores() {
     }
 }
 
-
 /** Function to get high scores from local storage */
 
 function getHighScores() {
@@ -309,8 +305,6 @@ function getHighScores() {
 // Display highscore from local storage 
 
 showHighScores();
-
-
 
 // Calls the initialization function
 
