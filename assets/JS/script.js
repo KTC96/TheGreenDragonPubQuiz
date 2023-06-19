@@ -261,13 +261,6 @@ function showFinalScore() {
     updateHighScores(usernameInput.value, score);
 }
 
-/**
- * Retrieves the username entered by the user
- */
-function getUsername() {
-    const usernameInput = document.getElementById('username-input');
-    return usernameInput.value;
-}
 
 /** Function to update high scores in local storage */
 /* I followed this tutorial to help load and display scores from local storage https://www.youtube.com/watch?v=jfOv18lCMmw */
