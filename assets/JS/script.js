@@ -157,7 +157,7 @@ function showQuestion() {
 /**
  * Checks if the selected answer button is the correct answer
  * Increments the score if correct and the incorrect score if incorrect. Highlights correct answer border and text in green
- * and incorrect in red. After a 3 second delay the next question and answers are shown. 
+ * and incorrect in red. After a 4 second delay the next question and answers are shown. 
  */
 
 function handleAnswer(event) {
@@ -234,7 +234,8 @@ function updateIncorrectCount() {
  * Provides message that the quiz is over and shows restart quiz button.
  */
 
-/* Code base taken from https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button */
+/* Code base to reset quiz taken from https://stackoverflow.com/questions/40371972/resetting-a-quiz-with-reset-button */
+
 
 
 function showFinalScore() {
@@ -269,6 +270,7 @@ function getUsername() {
 }
 
 /** Function to update high scores in local storage */
+/* I followed this tutorial to help load and display scores from local storage https://www.youtube.com/watch?v=jfOv18lCMmw */
 
 function updateHighScores(username, score) {
     let highScores = getHighScores();
