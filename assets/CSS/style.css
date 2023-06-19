@@ -206,6 +206,14 @@ body {
     font-weight: bold;
 }
 
+#submit {
+    background-color:#FBC841
+}
+
+#submit:hover {
+    border-color: #FFFFFF;
+}
+
 #high-score {
     color: #FBC841;
     font-weight: bold;
