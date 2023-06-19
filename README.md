@@ -52,13 +52,12 @@ The Green Dragon Pub Quiz is an interactive, JavaScript based quiz game which te
 ### Colour Scheme
 * I used a simple color scheme of green, black and gold to match the Lord of The Rings theme
 <br>
+<details><summary>Colour Scheme</summary>
+
+<img src="./assets/images/colour_scheme.png" height= 500px width= 600px>
+
+</details>
 <br>
-
-|Colour        |                |            |           | 
-| :-------     |    :--------:  |   -------: |  -------: | 
-| #      | #     | #  | #  | 
-
-![Color Scheme](./assets/images/color-scheme.png)
 
 ### Typography
 
@@ -71,9 +70,9 @@ The Green Dragon Pub Quiz is an interactive, JavaScript based quiz game which te
 
 
 
-[Desktop_wireframe](./wireframes/)
+[Desktop_wireframe](/wireframes/Desktop-wireframe.png)
 <br>
-[Mobile_wireframe](./wireframes/)
+[Mobile_wireframe](/wireframes/Mobile-wireframe.png)
 <br>
 
 
