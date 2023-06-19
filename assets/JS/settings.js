@@ -5,10 +5,24 @@ const setTheme = theme => document.documentElement.className = theme;
 
 //Hamburger menu sound effect
 
+var audioOn = true;
+var audio = null;
 function playMenuSound() {
-    var menuSound = document.getElementById("menuSound");
-    menuSound.currentTime = 0;
-    menuSound.play();
+    if (audioOn) {
+        var menuSound = document.getElementById("menuSound");
+        menuSound.currentTime = 0;
+        menuSound.play();
+    }
+}
+
+function toggleAudio() {
+    if (audioOn) {
+        audio.pause();
+        audioOn = false;
+    } else {
+        audio.play();
+        audioOn = true;
+    }
 }
 
 //Hamburger settings menu
@@ -41,6 +55,8 @@ function playSoundRestart() {
     audio.play();
 }
 
+
+
 /**  Function to play sound based on correct/incorrect answer*/
 /* Code base information: 
 https://stackoverflow.com/questions/74215959/how-can-i-use-javascript-to-play-a-random-audio-on-click */
@@ -70,6 +86,9 @@ function playSound(correct) {
     }
 
     var soundFile = soundFiles[Math.floor(Math.random() * soundFiles.length)];
-    var audio = new Audio(soundFile);
-    audio.play();
+    audio = new Audio(soundFile);
+    if (audioOn) {
+        audio.play();
+
+    }
 }

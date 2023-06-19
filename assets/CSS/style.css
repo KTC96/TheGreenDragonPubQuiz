@@ -207,7 +207,8 @@ body {
 }
 
 #submit {
-    background-color:#FBC841
+    background-color:#FBC841;
+   font-family: "Cinzel Decorative", sans-serif;
 }
 
 #submit:hover {
