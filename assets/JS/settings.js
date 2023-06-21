@@ -110,3 +110,4 @@ function toggleTheme() {
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
 }
+
