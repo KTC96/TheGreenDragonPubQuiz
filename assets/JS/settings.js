@@ -1,7 +1,17 @@
 //Code for light/dark theme
 // Code base taken from:  https://webdesign.tutsplus.com/tutorials/color-schemes-with-css-variables-and-javascript--cms-36989
 
-const setTheme = theme => document.documentElement.className = theme;
+// Sets theme on html element and saves to local storage
+const setTheme = theme => {
+    document.documentElement.className = theme;
+    localStorage.setItem('theme', theme);
+};
+
+//Retrieve theme preference from local storage on page load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    setTheme(savedTheme);
+}
 
 //Hamburger menu sound effect
 
@@ -94,4 +104,9 @@ function playSound(correct) {
     }
 }
 
-
+/** retrieves the current theme from the class name property of the html, checks and sets new theme */
+function toggleTheme() {
+    const currentTheme = document.documentElement.className;
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+}
