@@ -7,16 +7,21 @@ const setTheme = theme => {
     localStorage.setItem('theme', theme);
 };
 
+
 //Retrieve theme preference from local storage on page load
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
     setTheme(savedTheme);
 }
 
+
+
 //Hamburger menu sound effect
 
 var audioOn = true;
 var audio = null;
+
+
 
 function playMenuSound() {
     if (audioOn) {
@@ -44,6 +49,8 @@ themeButtons.forEach(function (button) {
         button.classList.add('active');
     }
 });
+
+
 
 // Attach event listeners to handle sound button clicks
 soundButtons.forEach(function (button) {
@@ -79,14 +86,28 @@ function resetSoundButtons() {
     });
 }
 
-function toggleAudio() {
-    if (audioOn) {
-        audio.pause();
-        audioOn = false;
-    } else {
-        audio.play();
-        audioOn = true;
-    }
+// Toggle sound on
+function soundOn() {
+    audioOn = true;
+    soundButtons.forEach(function (button) {
+        if (button.id === 'on') {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
+// Toggle sound off
+function soundOff() {
+    audioOn = false;
+    soundButtons.forEach(function (button) {
+        if (button.id === 'off') {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
 }
 
 // Function to highlight the active sound button
