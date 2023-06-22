@@ -26,6 +26,59 @@ function playMenuSound() {
     }
 }
 
+// Selecting DOM elements for settings menu active states
+
+var soundButtons = document.querySelectorAll('.sound-btn');
+var themeButtons = document.querySelectorAll('.theme-btn');
+
+// Add active state to sound buttons on page load
+soundButtons.forEach(function (button) {
+    if (button.id === 'on') {
+        button.classList.add('active');
+    }
+});
+
+// Add active state to theme buttons on page load
+themeButtons.forEach(function (button) {
+    if (button.classList.contains(savedTheme)) {
+        button.classList.add('active');
+    }
+});
+
+// Attach event listeners to handle sound button clicks
+soundButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        if (!button.classList.contains('active')) {
+            soundButtons.forEach(function (btn) {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+            highlightActiveSoundButton();
+        }
+    });
+});
+
+// Attach event listeners to handle theme button clicks
+themeButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        if (!button.classList.contains('active')) {
+            themeButtons.forEach(function (btn) {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+            highlightActiveThemeButton();
+            resetSoundButtons();
+        }
+    });
+});
+
+// Reset sound buttons' active state when changing theme
+function resetSoundButtons() {
+    soundButtons.forEach(function (button) {
+        button.classList.remove('active');
+    });
+}
+
 function toggleAudio() {
     if (audioOn) {
         audio.pause();
@@ -35,6 +88,31 @@ function toggleAudio() {
         audioOn = true;
     }
 }
+
+// Function to highlight the active sound button
+function highlightActiveSoundButton() {
+    soundButtons.forEach(function (button) {
+        if (button.classList.contains('active')) {
+            button.style.backgroundColor = 'grey';
+        } else {
+            button.style.backgroundColor = '';
+        }
+    });
+}
+
+// Function to highlight the active theme button
+function highlightActiveThemeButton() {
+    themeButtons.forEach(function (button) {
+        if (button.classList.contains('active')) {
+            button.style.backgroundColor = 'grey';
+        } else {
+            button.style.backgroundColor = '';
+        }
+    });
+}
+
+
+
 
 //Hamburger settings menu
 
@@ -110,4 +188,3 @@ function toggleTheme() {
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
 }
-

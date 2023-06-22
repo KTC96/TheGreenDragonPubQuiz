@@ -36,19 +36,20 @@
                     <ul>
                         <li>Sound </li>
                         <div class="toggle-container">
-                            <button id="on" class="theme-btn" onclick="toggleAudio()" title="Sound on">
+                            <button id="on" class="sound-btn" onclick="toggleAudio()" title="Sound on">
                                 <i class="fa-solid fa-volume-high"></i>
                             </button>
-                            <button id="off" class="theme-btn" onclick="toggleAudio()" title="Sound off">
+                            <button id="off" class="sound-btn" onclick="toggleAudio()" title="Sound off">
                                 <i class="fa-solid fa-volume-xmark"></i>
                             </button>
                         </div>
                         <li>Light/Dark mode</li>
                         <div class="toggle-container">
-                            <button class="theme-btn light" onclick="setTheme('light')" title="Light mode">
+                            <button class="theme-btn  light" onclick="setTheme('light')" title="Light mode">
                                 <img src="https://assets.codepen.io/210284/sun.png" alt="sun">
+                            </button>
                             <button class="theme-btn dark" onclick="setTheme('dark')" title="Dark mode">
-                                <img src="https://assets.codepen.io/210284/moon.png" alt="moon">
+                                    <img src="https://assets.codepen.io/210284/moon.png" alt="moon">
                             </button>
                         </div>
                     </ul>
@@ -91,7 +92,7 @@
                     <p class="score-label">High Score</p>
                     <p class="score-value" id="high-score">0</p>
                 </div>
-                
+
             </div>
             <div class="high-scores">
                 <p class="high-scores-label"><u>High Scores</u></p>
@@ -103,8 +104,8 @@
     </div>
     <!-- Javascript-->
     <script type="module" src="./assets/JS/script.js"></script>
-    <script type="module" src="./assets/JS/settings.js"></script>
-    <script type="module" src="./assets/JS/username.js"></script>
+    <script src="./assets/JS/settings.js"></script>
+    <script src="./assets/JS/username.js"></script>
     <noscript>Sorry your browser does not support JavaScript!</noscript>
 </body>
 
