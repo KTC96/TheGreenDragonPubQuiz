@@ -59,9 +59,12 @@ soundButtons.forEach(function (button) {
         });
         button.classList.add('active');
         highlightActiveSoundButton(); // Call the function to highlight the active sound button
+
+        // Save the selected sound button to local storage
+        const selectedSoundButton = button.id;
+        localStorage.setItem('selectedSoundButton', selectedSoundButton);
     });
 });
-
 
 // Attach event listeners to handle theme button clicks
 
