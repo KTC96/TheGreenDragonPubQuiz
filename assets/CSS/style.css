@@ -80,8 +80,7 @@ body {
     --shadow-color: none;
 }
 
-.theme-btn,
-.sound-btn {
+.theme-btn, .sound-btn {
     width: 3em;
     height: 3em;
     padding: 0.5em;
@@ -107,7 +106,7 @@ body {
 
 .sound-btn.active,
 .theme-btn.active {
-    background-color: grey;
+  background-color: grey;
 }
 
 

@@ -51,30 +51,34 @@ themeButtons.forEach(function (button) {
 });
 
 
-
 // Attach event listeners to handle sound button clicks
 soundButtons.forEach(function (button) {
     button.addEventListener('click', function () {
-        if (!button.classList.contains('active')) {
-            soundButtons.forEach(function (btn) {
-                btn.classList.remove('active');
-            });
-            button.classList.add('active');
-            highlightActiveSoundButton();
-        }
+        soundButtons.forEach(function (btn) {
+            btn.classList.remove('active');
+        });
+        button.classList.add('active');
+        highlightActiveSoundButton(); // Call the function to highlight the active sound button
     });
 });
 
+
 // Attach event listeners to handle theme button clicks
+
 themeButtons.forEach(function (button) {
     button.addEventListener('click', function () {
         if (!button.classList.contains('active')) {
+            const currentActiveSoundButton = document.querySelector('.sound-btn.active');
+            resetSoundButtons();
             themeButtons.forEach(function (btn) {
                 btn.classList.remove('active');
             });
             button.classList.add('active');
             highlightActiveThemeButton();
-            resetSoundButtons();
+            if (currentActiveSoundButton) {
+                currentActiveSoundButton.classList.add('active');
+                highlightActiveSoundButton();
+            }
         }
     });
 });
@@ -84,6 +88,7 @@ function resetSoundButtons() {
     soundButtons.forEach(function (button) {
         button.classList.remove('active');
     });
+    highlightActiveSoundButton();
 }
 
 // Toggle sound on
@@ -120,7 +125,6 @@ function highlightActiveSoundButton() {
         }
     });
 }
-
 // Function to highlight the active theme button
 function highlightActiveThemeButton() {
     themeButtons.forEach(function (button) {
