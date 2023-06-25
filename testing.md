@@ -115,3 +115,13 @@ Upon reviewing, everything was correct and there were no errors
 
 ### Lighthouse scores
 
+<details><summary>Lighthouse scores</summary>
+<br>
+
+[Mobile](./assets/images/mobile_lighthouse.png)
+<br>
+
+[Desktop](./assets/images/desktop_lighthouse.png)
+
+
+</details>

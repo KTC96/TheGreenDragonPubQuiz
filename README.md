@@ -134,6 +134,8 @@ The Green Dragon Pub Quiz is an interactive, JavaScript based quiz game which te
 
 ### Accessibility
 
+To make my site suitable for those with accessibility issues I used semantic HTML, alt attributes and aria labels and ensured a high level of contrast between different site elements. 
+
 ## Technologies
 
 [![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?lineCount=1&line1=HTML5,HTML5,ecbb4d;CSS3,CSS3,7ed0cf;JavaScript,JavaScript,5cd89d;)](https://github-readme-tech-stack.vercel.app/api/cards?lineCount=1&line1=HTML5,HTML5,ecbb4d;CSS3,CSS3,7ed0cf;JavaScript,JavaScript,5cd89d;)
@@ -163,7 +165,7 @@ The Green Dragon Pub Quiz is an interactive, JavaScript based quiz game which te
 
 I created a separate file to outline the testing I undertook on my project 
 
-[Testing File](./testing/TESTING.md)
+[Testing File](./testing.md)
 
 
 ## Deployment
@@ -172,8 +174,6 @@ I created a separate file to outline the testing I undertook on my project
    * In the GitHub repository, navigate to the Settings tab
    * From the source section drop-down menu, select the Master Branch
    * Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-
-[Link to live site](https://ktc96.github.io/project-one/)
 
 ## Credits
 
@@ -186,18 +186,13 @@ I created a separate file to outline the testing I undertook on my project
 * I used Envato tuts to learn and implement a light/dark theme to my site [Envato-tuts](https://webdesign.tutsplus.com/tutorials/color-schemes-with-css-variables-and-javascript--cms-36989)
 * I used W3 schools code as a base to set a timeout between answering a question and the next one loading [W3-Schools](https://www.w3schools.com/jsref/met_win_settimeout.asp)
 * I read the answer from Kyle which allowed me to style my text with a shadow to fit the webiste theme [Stackoverflow](https://stackoverflow.com/questions/4919076/outline-effect-to-text)
-* 
-* I used this code from the Love Maths project
+* I used the code for the score area from the Love Maths project
 
-<div class="score-area">
-            <p class="scores">Correct Answers <span id="score">0</span></p>
-            <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
- </div>
 
 
 ### Content
 
-
+Content for this website was written by Kyle Clow. The base for my quiz was this [Youtube](https://www.youtube.com/watch?v=PBcqGxrr9g8) tutorial. I mainly used stack overflow for any issues and inspoiration which I have credited in this file and as comments in my code. 
 
 ### Media
 
@@ -208,5 +203,8 @@ I created a separate file to outline the testing I undertook on my project
 
 
 ### Acknowledgements
+
+* The Slack Community for their guidance and support
+* Jack Wachira my Code Institute Mentor, for his advice and help throughout my project
 
 
