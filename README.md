@@ -1,6 +1,6 @@
 # The Green Dragon Pub Quiz
 The Green Dragon Pub Quiz is an interactive, JavaScript based quiz game which tests the users knowledge on The Lord of The Rings universe. The site provides visual and audio feedback depending if the correct or incorrect answer is selected. User high scores are also recorded alongside their username, creating a fun and competitive environment. 
-![Learno-Path](./testing/images/responsive.png)
+![TheGreenDragonPubQuiz]()
 
 ## [Link to live site](https://ktc96.github.io/TheGreenDragonPubQuiz/)
 
@@ -54,7 +54,7 @@ The Green Dragon Pub Quiz is an interactive, JavaScript based quiz game which te
 <br>
 <details><summary>Colour Scheme</summary>
 
-<img src="./assets/images/colour_scheme.png" height= 500px width= 600px>
+<img src="./assets/images/colour_scheme.png" height= 500px width= 600px> EDIT 
 
 </details>
 <br>
