@@ -23,6 +23,5 @@ function setUsername() {
         let label = document.getElementById('label');
         label.textContent = `Good Luck, ${username}!`;
         showHighScores();
-        
     }
 }

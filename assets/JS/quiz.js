@@ -100,7 +100,6 @@ export const quizData = [{
     question: 'What is the name of the kingdom of the dwarves that Thorin Oakenshield seeks to reclaim in "The Hobbit"?',
     answers: ['Erebor', 'Gondor', 'The Shire', 'Rhûn', ],
     correctAnswer: 0
-
 }
 ];
 

@@ -7,21 +7,16 @@ const setTheme = theme => {
     localStorage.setItem('theme', theme);
 };
 
-
 //Retrieve theme preference from local storage on page load
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
     setTheme(savedTheme);
 }
 
-
-
 //Hamburger menu sound effect
 
 var audioOn = true;
 var audio = null;
-
-
 
 function playMenuSound() {
     if (audioOn) {
@@ -49,7 +44,6 @@ themeButtons.forEach(function (button) {
         button.classList.add('active');
     }
 });
-
 
 // Attach event listeners to handle sound button clicks
 soundButtons.forEach(function (button) {
@@ -139,9 +133,6 @@ function highlightActiveThemeButton() {
     });
 }
 
-
-
-
 //Hamburger settings menu
 
 let toggleMenu = document.getElementById("settingsMenu");
@@ -171,8 +162,6 @@ function playSoundRestart() {
     var audio = new Audio(soundFile);
     audio.play();
 }
-
-
 
 /**  Function to play sound based on correct/incorrect answer*/
 /* Code base information: 

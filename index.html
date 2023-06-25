@@ -14,7 +14,7 @@
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Cinzel+Decorative:wght@900&display=swap"
         rel="stylesheet">
-    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
     <title>The Green Dragon Pub Quiz</title>
 </head>
 
@@ -23,9 +23,7 @@
         <h1 class="main-heading">
             <i class="fa-solid fa-dragon"></i> The Green Dragon Pub Quiz
         </h1>
-
         <div class="game-area">
-
             <div class="hamburger-wrapper">
                 <div class="settingsMenu" id="settingsMenu">
                     <audio id="menuSound"
@@ -35,33 +33,31 @@
                     </a>
                     <ul>
                         <li>Sound </li>
-                        <div class="toggle-container">
+                        <li class="toggle-container">
                             <button id="on" class="sound-btn" onclick="soundOn()" title="Sound on">
                                 <i class="fa-solid fa-volume-high"></i>
                             </button>
                             <button id="off" class="sound-btn" onclick="soundOff()" title="Sound off">
                                 <i class="fa-solid fa-volume-xmark"></i>
                             </button>
-                        </div>
+                        </li>
                         <li>Light/Dark mode</li>
-                        <div class="toggle-container">
+                        <li class="toggle-container">
                             <button class="theme-btn  light" onclick="setTheme('light')" title="Light mode">
                                 <img src="https://assets.codepen.io/210284/sun.png" alt="sun">
                             </button>
                             <button class="theme-btn dark" onclick="setTheme('dark')" title="Dark mode">
                                     <img src="https://assets.codepen.io/210284/moon.png" alt="moon">
                             </button>
-                        </div>
+                        </li>
                     </ul>
 
                 </div>
-
                 <a href="#" class="settings" onclick="openMenu()" aria-label=" settings icon to open menu"><i
                         class="fa-solid fa-gear"></i></a>
             </div>
-
             <div id="question-area">
-                <h2 id="question"></h2>
+                <div id="question"></div>
             </div>
             <button id="fullReset">Restart Quiz</button>
             <div id="button-container">
@@ -92,7 +88,6 @@
                     <p class="score-label">High Score</p>
                     <p class="score-value" id="high-score">0</p>
                 </div>
-
             </div>
             <div class="high-scores">
                 <p class="high-scores-label"><u>High Scores</u></p>
@@ -108,5 +103,4 @@
     <script src="./assets/JS/username.js"></script>
     <noscript>Sorry your browser does not support JavaScript!</noscript>
 </body>
-
 </html>

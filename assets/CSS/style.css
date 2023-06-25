@@ -4,7 +4,6 @@ body {
     margin: 0;
     background-color: var(--bg-color2);
     color: var(--text-color);
-    text-shadow: var(var(--shadow-color));
     overflow: auto;
 }
 
@@ -42,7 +41,6 @@ body {
     0% {
         transform: translateX(120%);
     }
-
     100% {
         transform: translateX(0);
     }
@@ -69,8 +67,7 @@ body {
 :root.dark {
     --bg-color2: #121212;
     --text-color: #FBC841;
-    --shadow-color: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    --bg-color: #0f4e06;
+    --bg-color: #0D4305;
 }
 
 :root.light {
@@ -109,9 +106,6 @@ body {
   background-color: grey;
 }
 
-
-
-
 /* Main game */
 
 .main-heading {
@@ -121,8 +115,6 @@ body {
     max-width: 70%;
     margin: 0% 10%;
     padding: 1%;
-
-
 }
 
 .game-area {
@@ -132,12 +124,9 @@ body {
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-
-
 }
 
 #question-area {
-
     width: 80%;
     height: 100%;
     margin-left: auto;
@@ -146,6 +135,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#question {
+    font-size: 1.7rem;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;;
 }
 
 .answer-button {
@@ -219,12 +213,12 @@ body {
 }
 
 #score {
-    color: green;
+    color: #FBC841;
     font-weight: bold;
 }
 
 #incorrect-count {
-    color: red;
+    color: #FBC841;
     font-weight: bold;
 }
 
@@ -240,7 +234,6 @@ body {
 #high-score {
     color: #FBC841;
     font-weight: bold;
-
 }
 
 .high-scores {
@@ -249,11 +242,9 @@ body {
     align-items: center;
     margin-top: 20px;
     margin-bottom: 5%;
-
 }
 
 #high-score-list {
-
     margin: 0;
     padding: 0;
 }
@@ -271,7 +262,6 @@ body {
     justify-content: center;
     padding: 25px;
     gap: 10px;
-
 }
 
 #fullReset {
@@ -295,8 +285,6 @@ body {
 
 /* Media queries */
 
-/* Small Screen sizes */
-
 @media (max-width: 480px) {
     #fullReset {
         width: 50%;
@@ -314,7 +302,6 @@ body {
     .fa-gear {
         font-size: 2rem;
         max-width: 90%;
-
     }
 
     .game-area {
@@ -357,7 +344,6 @@ body {
     .fa-gear {
         font-size: 3rem;
         max-width: 80%;
-
     }
 
     .game-area {
@@ -369,7 +355,6 @@ body {
     .main-heading {
         font-size: 4rem;
         max-width: 80%;
-
     }
 
     .fa-gear {
