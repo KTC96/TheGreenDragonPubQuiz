@@ -149,6 +149,12 @@ function closeMenu() {
     playMenuSound();
 }
 
+function playMenuSound() {
+    var menuSoundUrl = "assets/audio/Simple-Book-Page-Turn-www.fesliyanstudios.com-www.fesliyanstudios.com.mp3";
+    var audio = new Audio(menuSoundUrl);
+    audio.play();
+  }
+
 // Song to play when quiz finished
 function playSoundFinish() {
     var soundFile = 'assets/audio/three-hunters-lotr-by-voicemod.mp3';
