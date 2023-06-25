@@ -1,6 +1,6 @@
 # The Green Dragon Pub Quiz
 The Green Dragon Pub Quiz is an interactive, JavaScript based quiz game which tests the users knowledge on The Lord of The Rings universe. The site provides visual and audio feedback depending if the correct or incorrect answer is selected. User high scores are also recorded alongside their username, creating a fun and competitive environment. 
-![TheGreenDragonPubQuiz]()
+![TheGreenDragonPubQuiz](./assets/images/responsive.png)
 
 ## [Link to live site](https://ktc96.github.io/TheGreenDragonPubQuiz/)
 
@@ -32,20 +32,21 @@ The Green Dragon Pub Quiz is an interactive, JavaScript based quiz game which te
 
 ### User Stories
 
-
-
-
 * As a user of The Green Dragon Pub Quiz, I want to easily interact and play the quiz game, which is unique and engaging.
    * End user goal: Provide buttons for the user to select their answer, feedback if they get the answer correct and incorrect and challenging questions.
    * Acceptance criteria: Allow the user to navigate through the quiz, see if they got the question correct, and see their high score.
- 
+
+* As a user I want to be able to compete against friends
+   * End user goal: Show high scores alongside usernames, allowing competition
+   * Acceptance criteria: Sort highscores with JavaScript and return them alongside a submitted username.
+
+* As a user I want to be able to control the theme of the site and control the sound
+   * End user goal: Provide a light/ dark theme and a mute button.
+   * Acceptance criteria: Create a settings menu with buttons which control global code through the use of JavaScript functions.
+
 * As a user I want the quiz to be visually interesting and themed.
    * End user goal: Provide a well themed site in line with the Lord of The Rings Website.
    * Acceptance criteria: Use Lord Of the Rings inspired images, text and audio files to immerse the site user. 
-
-  
-     
-
 
 ## Design
 
@@ -78,6 +79,49 @@ The Green Dragon Pub Quiz is an interactive, JavaScript based quiz game which te
 
 
 ## Features
+
+* Main heading
+   * Clear title of the webpage with large stylised font to match the theme of the site
+   * Responsive to screen size, wrapping onto multiple lines on smaller screens
+   
+![Heading](./assets/images/heading.png)
+
+* Settings menu
+   * Accesible by clicking on the gear icon which plays a sound when interacted with
+   * Menu allows control of global sound and also control of a light/ dark theme
+   * These settings are saved to local storage allowing a better user experience
+
+![Settings](./assets/images/settings.png)
+
+* Game area
+   * Includes the question which is generated from a JavaScript array as well as answer buttons themed with Lord of The Rings locations
+   * Buttons have a hover effect and can be clicked.
+   * If the correct or incorrect answer is chosen a corrosponsing sound is heard and the correct and incorrect answers are highlighted in green or red.
+   * The next question displays after a 4 second interval to allow the evaluate their choice.
+
+![Game-area](./assets/images/game_area.png)
+
+* Username
+   * In order to play the quiz, the user must input a username as the answer buttons are not interactable until then.
+   * If a user trys to interact with the buttons before submitting a username, an alert pops up reminding them to do this. 
+   * After the username is inputted a good luck message is displayed.
+
+![Username](./assets/images/username.png)
+
+* Score area
+   * As the user plays the quiz their tally of correct and incorrect answers is displayed along with the highest score.
+   * The top three highest scores correlating to username are displayed also. 
+
+![Score-area](./assets/images/score_area.png)
+
+* Restart quiz
+   * At the end of the quiz the users final score is displayed and a finishing song is played.
+   * The user is given the option to restart the quiz which, when clicked, resets the score
+
+![Restart](./assets/images/restart.png)
+
+
+
 
 
    

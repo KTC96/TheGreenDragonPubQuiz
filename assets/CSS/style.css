@@ -191,7 +191,7 @@ body {
 }
 
 #submit {
-    margin: 1%;
+    margin: 2%;
     height: 25px;
 
 }
@@ -377,6 +377,4 @@ body {
     .game-area {
         max-width: 80%;
     }
-
-    
 }
