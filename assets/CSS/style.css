@@ -184,6 +184,18 @@ body {
     background-position: 50% 60%;
 }
 
+#username {
+    margin: 1%;
+    height: 25px
+
+}
+
+#submit {
+    margin: 2%;
+    height: 25px;
+
+}
+
 .answer-button:hover {
     border-color: #FBC841;
 }
