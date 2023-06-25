@@ -152,7 +152,7 @@ function closeMenu() {
 // Song to play when quiz finished
 function playSoundFinish() {
     var soundFile = 'assets/audio/three-hunters-lotr-by-voicemod.mp3';
-    var audio = new Audio(soundFile);
+    audio = new Audio(soundFile);
     audio.play();
 }
 
