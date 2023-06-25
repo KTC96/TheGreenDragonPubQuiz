@@ -156,13 +156,6 @@ function playSoundFinish() {
     audio.play();
 }
 
-//Sound effect when restart button is clicked
-function playSoundRestart() {
-    var soundFile = 'assets/audio/sword_effect.mp3'; //
-    var audio = new Audio(soundFile);
-    audio.play();
-}
-
 /**  Function to play sound based on correct/incorrect answer*/
 /* Code base information: 
 https://stackoverflow.com/questions/74215959/how-can-i-use-javascript-to-play-a-random-audio-on-click */
