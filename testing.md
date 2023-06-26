@@ -57,7 +57,6 @@ increased the margin of the settings icon and decreased the font size of the mai
     * Solution:
 
 
-
 Contrast:
 
 I checked the contrast of the text elements of my site, using [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) to ensure my site met WCA guidelines.

@@ -62,7 +62,7 @@ body {
 
 }
 
-/* Light/Dark theme */
+/* Light/Dark theme and sound settings*/
 
 :root,
 :root.dark {
@@ -78,6 +78,11 @@ body {
     --shadow-color: none;
 }
 
+.sound-btn.active,
+.theme-btn.active {
+    background-color: grey;
+}
+
 .theme-btn,
 .sound-btn {
     width: 3em;
@@ -88,6 +93,8 @@ body {
     border: none;
     background-color: transparent;
 }
+
+/* Main game area */
 
 .theme-btn img {
     height: 100%;
@@ -102,13 +109,6 @@ body {
     background-color: transparent;
     cursor: pointer;
 }
-
-.sound-btn.active,
-.theme-btn.active {
-    background-color: grey;
-}
-
-/* Main game */
 
 .main-heading {
     font-family: "Cinzel Decorative", sans-serif;
@@ -126,6 +126,7 @@ body {
     height: 100%;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 #question-area {
@@ -161,6 +162,8 @@ body {
     font-weight: 600;
     color: #FBC841;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    position: relative;
+    
 }
 
 #hobbit {
@@ -202,6 +205,8 @@ body {
 .answer-button:hover {
     border-color: #FBC841;
 }
+
+/* Score area */
 
 .score-area {
     display: flex;
@@ -279,6 +284,8 @@ body {
     gap: 10px;
 }
 
+/*Restart quiz */
+
 #fullReset {
     border: 5px solid;
     width: 30%;
@@ -296,18 +303,6 @@ body {
 
 #fullReset:hover {
     border-color: #FBC841;
-}
-
-/* 404 page */
-
-.image-container {
-    display: flex;
-    justify-content: center;
-}
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
 }
 
 /* Media queries */

@@ -89,7 +89,7 @@ function handleAnswer(event) {
         answerButtons[question.correctAnswer].style.borderColor = "green";
         answerButtons[question.correctAnswer].style.color = "green";
     }
-
+// Sets delay between answerting the question and showing the next one
     setTimeout(() => {
         answerButtons.forEach((button) => {
             button.style.borderColor = "";

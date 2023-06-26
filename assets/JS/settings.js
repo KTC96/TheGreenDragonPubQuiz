@@ -18,6 +18,10 @@ if (savedTheme) {
 var audioOn = true;
 var audio = null;
 
+/** Plays audio effect when the settings button is clicked
+ * if the audio is set to on
+ */
+
 function playMenuSound() {
     if (audioOn) {
         var menuSound = document.getElementById("menuSound");
@@ -80,7 +84,7 @@ themeButtons.forEach(function (button) {
     });
 });
 
-// Reset sound buttons' active state when changing theme
+/**  Reset sound buttons active state when changing theme */
 function resetSoundButtons() {
     soundButtons.forEach(function (button) {
         button.classList.remove('active');
@@ -88,7 +92,7 @@ function resetSoundButtons() {
     highlightActiveSoundButton();
 }
 
-// Toggle sound on
+/** Turn sound on and set buttons active state for styling */
 function soundOn() {
     audioOn = true;
     soundButtons.forEach(function (button) {
@@ -100,7 +104,7 @@ function soundOn() {
     });
 }
 
-// Toggle sound off
+/** Turn sound off */
 function soundOff() {
     audioOn = false;
     soundButtons.forEach(function (button) {
@@ -112,7 +116,7 @@ function soundOff() {
     });
 }
 
-// Function to highlight the active sound button
+/**  Function to highlight the active sound button */
 function highlightActiveSoundButton() {
     soundButtons.forEach(function (button) {
         if (button.classList.contains('active')) {
@@ -122,7 +126,7 @@ function highlightActiveSoundButton() {
         }
     });
 }
-// Function to highlight the active theme button
+/** Function to highlight the active theme button */
 function highlightActiveThemeButton() {
     themeButtons.forEach(function (button) {
         if (button.classList.contains('active')) {
@@ -150,7 +154,7 @@ function closeMenu() {
 }
 
 
-// Song to play when quiz finished
+/**  Song to play when quiz finished */
 function playSoundFinish() {
     var soundFile = 'assets/audio/three-hunters-lotr-by-voicemod.mp3';
     audio = new Audio(soundFile);
