@@ -41,6 +41,7 @@ body {
     0% {
         transform: translateX(120%);
     }
+
     100% {
         transform: translateX(0);
     }
@@ -77,7 +78,8 @@ body {
     --shadow-color: none;
 }
 
-.theme-btn, .sound-btn {
+.theme-btn,
+.sound-btn {
     width: 3em;
     height: 3em;
     padding: 0.5em;
@@ -103,7 +105,7 @@ body {
 
 .sound-btn.active,
 .theme-btn.active {
-  background-color: grey;
+    background-color: grey;
 }
 
 /* Main game */
@@ -139,7 +141,8 @@ body {
 
 #question {
     font-size: 1.7rem;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    ;
 }
 
 .answer-button {
@@ -164,7 +167,7 @@ body {
     background-image: url('../images/hobbit-4495138_1280.webp');
     background-size: cover;
     background-position: 90% 65%;
-    
+
 }
 
 #mountain {
@@ -188,7 +191,6 @@ body {
 #username {
     margin: 1%;
     height: 25px
-
 }
 
 #submit {
@@ -294,6 +296,18 @@ body {
 
 #fullReset:hover {
     border-color: #FBC841;
+}
+
+/* 404 page */
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Media queries */
